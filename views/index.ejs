@@ -1,0 +1,28 @@
+<%- include('partials/header.ejs') %>
+
+<div id="blog-app">
+    <div id="post-section">
+        <h1>Create a Blog Post</h1>
+        <form action="/submit" method="post">
+            <label for="headline">Headline:</label>
+            <input type="text" name="headline" id="headline-text" size="50"> <br><br>
+            <label for="content">Text/Description:</label>
+            <textarea name="content" id="" cols="100" rows="20"></textarea>
+             <br><br>
+            <input type="submit" value="Post" id="submit">
+        </form>
+    </div>
+
+    <div id="headline-section">
+        <h1>Latest Blog Posts</h1>
+        <% if (locals.outHeading) { %>
+            <% outHeading.forEach((item) =>{ %>
+                <a href="/assets/<%= item.toLowerCase() %>.html"><%= item %></a>
+            <% }) %>
+        <% } %>
+    </div>
+</div>
+
+
+<%- include('partials/footer.ejs') %>
+

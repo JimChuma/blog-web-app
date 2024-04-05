@@ -1,0 +1,127 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#blog-app {
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+#post-section {
+    width: 60%;
+    height: 100%;
+    background-color: #F0F8FF;
+    padding: 60px 40px;
+}
+
+#headline-section {
+    width: 40%;
+    height: 100%;
+    background-color: #2E5980;
+    color: white;
+    padding: 60px 40px;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+label {
+    font-size: 1.4rem;
+    display: block;
+} 
+
+form {
+    font-family: "poppins", sans-serif;
+    margin-top: 25px;
+}
+
+#headline-section a {
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 15px;
+    font-family: "poppins", sans-serif;
+    text-decoration: none;
+}
+
+#headline-section a {
+    display: block;
+}
+
+#headline-section a:hover, #headline-section a:active {
+    color: #FEF0DA;
+}
+
+#headline-text {
+    line-height: 2rem;
+}
+
+#submit {
+    border: none;
+    outline: none;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+textarea {
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 1440px) {
+    #blog-app {
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    #post-section,
+    #headline-section {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 840px) {
+    textarea {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #headline-text {
+        width: 100%;
+    }
+
+    #post-section,
+    #headline-section {
+        padding: 60px 10px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    label {
+        font-size: 1.2rem;
+    } 
+}
+
+@media only screen and (max-width: 345px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    label {
+        font-size: 1.2rem;
+    } 
+
+    #headline-section a {
+        font-size: 1rem;
+    }
+}

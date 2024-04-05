@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    padding: 80px 20px;
+    background-color: aliceblue;
+}
+
+pre {
+    width: 100%;
+    max-width: 700px;
+    font-family: 'Poppins', sans-serif;
+    text-wrap: wrap;
+    line-height: 2.5rem;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+}
+
+@media only screen and (max-width: 500px) {
+    body {
+        padding: 80px 10px;
+    }
+}
