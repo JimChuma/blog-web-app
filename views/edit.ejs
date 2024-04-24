@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit - <%= title %></title>
+    <link rel="stylesheet" href="/styles/edit.css">
+</head>
+<body>
+    <div id="post-section">
+        <div id="post-headline">
+            <div id="post-wrapper">
+                <h1>Edit Post: <%= title %></h1>
+            </div>
+        </div>
+        <div id="form-content">
+            <div id="form-wrapper">
+                <form action="/post-edit" method="post">
+                    <input type="hidden" name="id" value="<%= id %>">
+                    <label for="headline-text">Headline:</label>
+                    <input type="text" name="headline" id="headline-text" value="<%= title %>" size="50" autocomplete="off" required autofocus onfocus="this.setSelectionRange(this.value.length,this.value.length)"> <br><br>
+                    <label for="content-text">Text/Description:</label>
+                    <textarea name="content" id="content-text" cols="100" rows="20" required><%= text %></textarea>
+                    <br><br>
+                    <input type="submit" value="Post" id="submit">
+                    <a href="/post/<%= id %>">Go Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

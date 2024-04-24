@@ -9,20 +9,13 @@
     display: flex;
     justify-content: center;
     align-items: start;
+    position: relative;
 }
 
 #post-section {
     width: 60%;
     height: 100%;
     background-color: #F0F8FF;
-    padding: 60px 40px;
-}
-
-#headline-section {
-    width: 40%;
-    height: 100%;
-    background-color: #2E5980;
-    color: white;
     padding: 60px 40px;
 }
 
@@ -40,22 +33,6 @@ form {
     margin-top: 25px;
 }
 
-#headline-section a {
-    color: white;
-    font-size: 1.2rem;
-    margin-top: 15px;
-    font-family: "poppins", sans-serif;
-    text-decoration: none;
-}
-
-#headline-section a {
-    display: block;
-}
-
-#headline-section a:hover, #headline-section a:active {
-    color: #FEF0DA;
-}
-
 #headline-text {
     line-height: 2rem;
 }
@@ -63,7 +40,7 @@ form {
 #submit {
     border: none;
     outline: none;
-    padding: 10px 30px;
+    padding: 12px 30px;
     border-radius: 50px;
     font-size: 1rem;
     cursor: pointer;
@@ -71,8 +48,72 @@ form {
     color: white;
 }
 
+#submit:hover {
+    background-color: #2B2B2B;
+}
+
 textarea {
     margin-top: 10px;
+}
+
+#headline-section {
+    width: 40%;
+    height: 100%;
+    background-color: #2E5980;
+    color: white;
+    padding: 60px 40px;
+}
+
+#headline-section a {
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 15px;
+    font-family: "poppins", sans-serif;
+    text-decoration: none;
+    display: block;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#headline-section a:hover, #headline-section a:active {
+    color: #FEF0DA;
+}
+
+#delete-success {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #27344066;
+    color: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#delete-container {
+    background-color: white;
+    border-radius: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#delete-wrapper {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    font-family: "poppins", sans-serif;
+    padding: 40px 0px;
+    gap: 20px;
+    align-items: center;
+}
+
+#deletePopUp {
+    display: none;
 }
 
 @media only screen and (max-width: 1440px) {

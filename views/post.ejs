@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles/layout.css">
+</head>
+<body>
+    <div id="blog-app">
+        <div id="delete-option" class="delete-menu">
+            <div id="delete-frame">
+                <div id="delete-container">
+                    <div id="delete-wrapper">
+                        <h2>Are you sure you want to delete this post?</h2>
+                        <div>
+                            <span onclick="deletePost()">No</span>
+                            <a href="/delete/<%= id %>">Yes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="headline">
+            <div id="headline-wrapper">
+                <h1><%= title %></h1>
+                <a href="/">Go Back</a>
+            </div>
+        </div>
+        <div id="text-wrapper">
+            <% if (locals.edit) { %>
+                <h5><%= edit + " | " + date %></h5>
+            <% } else { %>
+                <h5><%= date %></h5>
+            <% } %>
+            <p><%= text %></p>
+            <a href="/edit/<%= id %>">Edit</a>
+            <span onclick="deletePost()">Delete</span>
+        </div>
+    </div>
+
+    <script>
+        function deletePost() {
+            document.getElementById("delete-option").classList.toggle("delete-menu");
+        }
+    </script>
+</body>
+</html>

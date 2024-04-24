@@ -4,10 +4,10 @@
     <div id="post-section">
         <h1>Create a Blog Post</h1>
         <form action="/submit" method="post">
-            <label for="headline">Headline:</label>
-            <input type="text" name="headline" id="headline-text" size="50"> <br><br>
-            <label for="content">Text/Description:</label>
-            <textarea name="content" id="" cols="100" rows="20"></textarea>
+            <label for="headline-text">Headline:</label>
+            <input type="text" name="headline" id="headline-text" size="50" autocomplete="off" autofocus required> <br><br>
+            <label for="content-text">Text/Description:</label>
+            <textarea name="content" id="content-text" cols="100" rows="20" required></textarea>
              <br><br>
             <input type="submit" value="Post" id="submit">
         </form>
@@ -15,13 +15,36 @@
 
     <div id="headline-section">
         <h1>Latest Blog Posts</h1>
-        <% if (locals.outHeading) { %>
-            <% outHeading.forEach((item) =>{ %>
-                <a href="/assets/<%= item.toLowerCase() %>.html"><%= item %></a>
+        <% if (locals.posts) { %>
+            <% posts.forEach(post =>{ %>
+                <a href="/post/<%= post.id %>"><%= post.title %></a>
             <% }) %>
+        <% } %>
+        
+        <% if (locals.delete) { %>
+            <div id="delete-success">
+                <div id="delete-container">
+                    <div id="delete-wrapper">
+                        <h2>Post successfully deleted</h2>
+                        <form action="/refresh" method="post" id="deletePopUp">
+                            <input type="hidden">
+                        </form>
+                    </div>
+                </div>
+            </div>
         <% } %>
     </div>
 </div>
+
+<script>
+    const deleteSuccess = document.getElementById("deletePopUp");
+    if (deleteSuccess) {
+        setTimeout(() => { deleteSuccess.submit() }, 1500)
+        
+    }
+</script>
+
+
 
 
 <%- include('partials/footer.ejs') %>
