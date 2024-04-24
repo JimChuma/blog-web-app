@@ -92,3 +92,26 @@ a {
 a:hover {
     background-color: #637280;
 }
+
+@media only screen and (max-width: 1040px) {
+    textarea {
+        width: 100%;
+        font-size: 1.2rem;
+    }
+
+    #headline-text {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    #headline-text {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    h1 {
+        font-size: 2.6rem;
+    }
+}
